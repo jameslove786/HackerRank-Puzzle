@@ -1,0 +1,17 @@
+//Factori        Factorial Program
+            int STDIN = Convert.ToInt32(Console.ReadLine());
+        int STDOUT = 1;
+        int i = STDIN;
+            if (STDIN == 0 || STDIN == 1)
+            {
+                STDOUT = 1;
+            }
+            else
+            {
+                while (STDIN/i!=STDIN)
+                {
+                    STDOUT = STDOUT* i;
+                    --i;
+                }
+            }
+            Console.WriteLine(STDOUT);
