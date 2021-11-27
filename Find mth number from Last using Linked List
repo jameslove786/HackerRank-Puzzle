@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class Solution {
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+        
+           
+            int STDIN = Convert.ToInt32(Console.ReadLine());
+            LinkedList<int> ll = new LinkedList<int>();
+
+            string listLL = Console.ReadLine();
+            string[] listLL2 = listLL.Split(' ');
+
+            foreach (var x in listLL2)
+            {
+                ll.AddLast(Convert.ToInt32(x));
+            }
+
+            int k = STDIN;
+            var STDOUT="";
+            
+            LinkedListNode<int> p1 = ll.First;
+            LinkedListNode<int> p2 = ll.First;
+            try
+            {
+                for (int i = 0; i < k; i++)
+                {
+                    p2 = p2.Next;
+
+                    if (p2 == null)
+                    {
+                        //Console.WriteLine($"Linkedlist is smaller than {k}th Element");
+                        STDOUT = "Nill";
+                        
+                    }
+                }
+               
+                    while (p2 != null)
+                    {
+                        p2 = p2.Next;
+                        p1 = p1.Next;
+                    }
+                    STDOUT = Convert.ToString(p1.Value);
+                    Console.WriteLine(STDOUT);
+                  
+            }
+            catch (Exception )
+            {
+                Console.WriteLine(STDOUT);
+            }
+    }
+
+        
+    
+}
