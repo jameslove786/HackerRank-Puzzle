@@ -1,0 +1,47 @@
+Hashtable numberNames = new Hashtable();
+            numberNames.Add("Vow",0);
+            numberNames.Add("Cons", 0);
+            int v=0, c = 0;
+            string str = Console.ReadLine();
+            int flag = 0;
+            int mflag = 0;
+            for (int p = 0; p < str.Length; p++)
+            {
+                if(str[p]=='a' || str[p] == 'e'  || str[p] == 'i' || str[p] == 'o'|| str[p] == 'u')
+                {
+                    c = 0;
+                    v=v+1;
+                    numberNames["Vow"] = v;
+                }
+                else if (str[p] == '?')
+                {
+                    mflag = 1;
+
+                }
+                else
+                {
+                    v = 0;
+                    c = c + 1;
+                    numberNames["Cons"] = c;
+                }
+                var v1 = numberNames["Vow"];
+                var c1 = numberNames["Cons"];
+                if (Convert.ToInt32(v1) == 5|| Convert.ToInt32(c1) == 3)
+                {
+                    flag = 1;
+                    break;
+                }   
+            }
+            if (flag == 1)
+            {
+                Console.WriteLine("Bad string");
+            }
+            else if(flag==1 & mflag == 1)
+            {
+                Console.WriteLine("Mixed");
+            }
+            else
+            {
+                Console.WriteLine("Good");
+            }
+
